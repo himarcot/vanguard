@@ -203,6 +203,39 @@ h1{
 #main-navigation:checked ~ h1 {
     transform: translateY(150px);
 }
+
+h2{
+    font-size: 1.8rem;
+}
+
+#innovation h2{
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 0.85rem 1.25rem;
+    border: 2px solid var(--blue);
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--red);
+    border: 2px solid var(--red);
+}
+
+footer{
+    text-align: center;
+}
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
