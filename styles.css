@@ -190,7 +190,20 @@ h1{
 }
 
 header{
-    margin: 20px;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+}
+
+header::after{
+    content:"";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--blue);
+    box-shadow: 0 4px 10px var(--blue);
 }
 
 #main-navigation:checked ~ h1 {
@@ -200,6 +213,10 @@ header{
 h2{
     font-size: 1.8rem;
     font-weight: bold;
+    padding: 20px;
+}
+
+#innovation p{
     padding: 20px;
 }
 
@@ -213,11 +230,7 @@ h2{
 }
 
 #whatweoffer{
-    padding: 3rem;
-}
-
-#whatweoffer h2{
-    margin-bottom: 2rem;
+    padding: 1rem;
 }
 
 .offerings-grid{
@@ -263,7 +276,6 @@ h2{
 }
 
 #profits h3{
-    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
@@ -307,8 +319,12 @@ h2{
     padding-bottom: 3rem;
 }
 
+#profits, #growth{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
 #contact{
-    padding: 3rem, 0;
+    padding: 3rem;
 }
 
 #contact h2{
@@ -339,7 +355,6 @@ h2{
     box-sizing: border-box;
     padding: 0.85rem;
     border: 2px solid var(--blue);
-    border-radius: 4px;
     font-size: 1rem;
 }
 
@@ -354,7 +369,7 @@ button {
     color: var(--white);
     padding: 0.85rem 1.25rem;
     border: 2px solid var(--blue);
-    border-radius: 2px;
+    border-radius: 10px;
     text-decoration: none;
     font-family: var(--font);
     font-size: 1rem;
@@ -372,6 +387,7 @@ button:hover {
 footer{
     text-align: center;
 }
+
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
@@ -451,18 +467,23 @@ h1::before {
 
 /* MEDIA QUERIES (MEDIUM) */ 
 @media screen and (min-width: 600px){
-    #results {
-        grid-template-columns: 1fr 1fr;
-    }
-    .results-container {
-        flex-direction: row;
+    header{
+        display: flex;
+        align-items: center;
         justify-content: space-between;
     }
-    .results-table {
-        width: 50%;
+    nav{
+        position: static;
     }
-    .bar-chart {
-        width: 50%;
+    #profits{
+        width: 100%;
+    }
+    #profits table{
+        width: 100%;
+        max-width: none;
+    }
+    #bar-chart {
+        width: 100%;
     }
     nav ul {
         overflow:visible;
@@ -478,7 +499,48 @@ h1::before {
     nav label, #main-navigation {
         display:none;
     }
+    .offerings-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #results{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:2rem;
+        align-items: start;
+    }
+    #profits, #growth{
+        width: 100%
+    }
+    #profits table{
+        width: 100%;
+        max-width: none;
+    }
+    #bar-chart{
+        width: 100%;
+        box-sizing: border-box;
+    }
       }
 
 
 /* MEDIA QUERIES (LARGE) */
+@media screen and (min-width: 1000px) {
+    header{
+        padding: 1.5rem 3rem;
+    }
+    nav ul{
+        gap: 2rem;
+    }
+    nav li a{
+        font-size: 1rem;
+    }
+    #innovation{
+        height: 85vh;
+    }
+    #innovation h2{
+        font-size: 2.5rem;
+    }
+    #innovation p{
+        max-wdith: 700px;
+        margin: 0 auto;
+    }
+}
