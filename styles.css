@@ -265,7 +265,7 @@ h2{
 }
 
 #profits{
-    padding: 2rem, 0;
+    padding: 2rem 0;
 }
 
 #profits h3, #growth h3{
@@ -283,7 +283,7 @@ h2{
     width: 100%;
     max-width: 800px;
     border: 2px solid var(--charcoal);
-    margin: 0, auto;
+    margin: 0 auto;
     background-color: black;
     color: white;
 }
@@ -544,7 +544,7 @@ h1::before {
         font-size: 2.5rem;
     }
     #innovation p{
-        max-wdith: 700px;
+        max-width: 700px;
         margin: 0 auto;
     }
     #expertise{
@@ -577,14 +577,14 @@ h1::before {
         flex-wrap: wrap;
         gap: 1rem;
     }
-    #contactfield{
+    .contactfield{
         flex: 1 1 45%;
     }
-    #contactfield label{
+    .contactfield label{
         display: block;
         margin-bottom: 0.5rem;
     }
-    #contactfield input, #contactfield textarea{
+    .contactfield input, #contactfield textarea{
         width: 100%;
         box-sizing: border-box;
     }
