@@ -144,44 +144,30 @@ label span:before {
 label span:after {
     top: -.75rem;
 }
-input {
+#main-navigation{
   display:none;
 }
 
-input:checked ~ ul {
+#main-navigation:checked ~ nav ul {
     max-height: 500px;
 }
 
-input:checked ~ label span {
+#main-navigation:checked ~ nav label span {
     background: transparent;
 }
 
-input:checked ~ label span:before {
+#main-navigation:checked ~ nav label span:before {
     transform: rotate(-45deg);
-}
-
-input:checked ~ label span:after {
-    transform: rotate(45deg);
-}
-
-input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
 }
-@media screen and (min-width: 600px){
-  nav ul {
-    overflow:visible;
-    position:absolute;
-    top: 1.5rem;
-    left:.5rem;
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr;
-  }
-  nav li a {
-    display:inline-block;
+
+#main-navigation:checked ~ nav label span:after {
+    transform: rotate(45deg);
+    top: 0;
 }
-  label span, input {
-    display:none;
-  }
+
+#main-navigation:checked ~ h1 {
+    transform: translate(0px, 150px);
 }
 
 h1::before {
@@ -226,16 +212,51 @@ h2{
     color: black;
 }
 
-#profits{
-    padding: 2rem, 0;
+#whatweoffer{
+    padding: 3rem;
+}
+
+#whatweoffer h2{
+    margin-bottom: 2rem;
+}
+
+.offerings-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    justify-items: stretch;
+}
+
+.offering{
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: var(--blue);
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.offering h3{
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.offering p{
+    line-height: 1.5;
 }
 
 #provenresults{
     background-color: var(--blue);
 }
 
+#profits{
+    padding: 2rem, 0;
+}
+
 #profits h3, #growth h3{
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-left: 30px;
     padding: 20px;
@@ -279,6 +300,52 @@ h2{
 
 #profits tr:nth-child(odd) td {
     background-color: var(--charcoal);
+}
+
+#growth{
+    background-color: var(--blue);
+    padding-bottom: 3rem;
+}
+
+#contact{
+    padding: 3rem, 0;
+}
+
+#contact h2{
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+#contact p{
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+#contact form{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+#contact label{
+    font-weight: bold;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+#contact input, #contact textarea{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.85rem;
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#contact textarea{
+    min-height: 120px;
+    resize: vertical;
 }
 
 button {
@@ -383,7 +450,7 @@ h1::before {
 
 
 /* MEDIA QUERIES (MEDIUM) */ 
-
+@media screen and (min-width: 600px){
     #results {
         grid-template-columns: 1fr 1fr;
     }
@@ -397,6 +464,21 @@ h1::before {
     .bar-chart {
         width: 50%;
     }
+    nav ul {
+        overflow:visible;
+        position:absolute;
+        top: 1.5rem;
+        left:.5rem;
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+    }
+    nav li a {
+        display:inline-block;
+    }
+    nav label, #main-navigation {
+        display:none;
+    }
+      }
 
 
 /* MEDIA QUERIES (LARGE) */
