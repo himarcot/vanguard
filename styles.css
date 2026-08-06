@@ -474,6 +474,7 @@ h1::before {
     }
     nav{
         position: static;
+        margin-left: auto;
     }
     #profits{
         width: 100%;
@@ -486,15 +487,17 @@ h1::before {
         width: 100%;
     }
     nav ul {
-        overflow:visible;
-        position:absolute;
-        top: 1.5rem;
-        left:.5rem;
-        display: grid;
-        grid-template-columns:1fr 1fr 1fr;
+        overflow: visible;
+        max-height: none;
+        position: static;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
     }
     nav li a {
         display:inline-block;
+        font-size: 1rem;
+        padding: 0.5rem;
     }
     nav label, #main-navigation {
         display:none;
@@ -528,7 +531,7 @@ h1::before {
         padding: 1.5rem 3rem;
     }
     nav ul{
-        gap: 2rem;
+        gap: 3rem;
     }
     nav li a{
         font-size: 1rem;
@@ -569,11 +572,24 @@ h1::before {
         max-width: none;
     }
     #contact form{
-        grid-template-columns: 1fr 1fr;
-        column-gap: 2rem;
-        row-gap: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
-    #contact textarea{
-        min-height: 140px;
+    #contactfield{
+        flex: 1 1 45%;
+    }
+    #contactfield label{
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    #contactfield input, #contactfield textarea{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #contact button{
+        flex: 1 1 45%;
+        align-self: flex-start;
+        margin-top: 1.5rem;
     }
 }
